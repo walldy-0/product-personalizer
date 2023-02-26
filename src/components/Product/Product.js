@@ -2,7 +2,6 @@ import styles from './Product.module.scss';
 import { useState } from 'react';
 import ProductImage from '../ProductImage/ProductImage';
 import ProductOptions from '../ProductOptions/ProductOptions';
-import propTypes from 'prop-types';
 
 const Product = props => {
   
@@ -30,14 +29,10 @@ const Product = props => {
           <h2 className={styles.name}>{props.title}</h2>
           <span className={styles.price}>Price: {getPrice()}$</span>
         </header>
-      <ProductOptions props={props} currentColor={currentColor} currentSize={currentSize} addToCart={addToCart} changeColor={changeColor} changeSize={changeSize} />
+        <ProductOptions props={props} currentColor={currentColor} currentSize={currentSize} addToCart={addToCart} changeColor={changeColor} changeSize={changeSize} />
       </div>
     </article>
   )
-};
-
-Product.propTypes = {
-  props: propTypes.object.isRequired
 };
 
 export default Product;
